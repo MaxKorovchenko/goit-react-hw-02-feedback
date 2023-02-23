@@ -3,6 +3,8 @@ import { Notification } from 'components/Notification/Notification';
 import { Section } from 'components/Section/Section';
 import { Statistics } from 'components/Statistics/Statistics';
 import { Component } from 'react';
+import { Layout } from './App.styled';
+import { GlobalStyle } from './GlobalStyle';
 
 export class App extends Component {
   state = {
@@ -44,7 +46,7 @@ export class App extends Component {
     const positivePercentage = this.countPositiveFeedbackPercentage();
 
     return (
-      <div>
+      <Layout>
         <Section title="Please leave feedback">
           <FeedbackOptions
             options={['good', 'neutral', 'bad']}
@@ -64,10 +66,12 @@ export class App extends Component {
             total={total}
             positivePercentage={positivePercentage}
           />
+
+          <Notification total={total} message="There is no feedback" />
         </Section>
 
-        <Notification total={total} message="There is no feedback" />
-      </div>
+        <GlobalStyle />
+      </Layout>
     );
   }
 }

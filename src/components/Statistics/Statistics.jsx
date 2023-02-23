@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { Text, Wrapper } from './Statistics.styled';
 
 export const Statistics = ({
   good,
@@ -9,14 +10,14 @@ export const Statistics = ({
 }) => {
   return (
     <>
-      {!total == 0 && (
-        <section>
-          <p>Good: {good}</p>
-          <p>Neutral: {neutral}</p>
-          <p>Bad: {bad}</p>
-          <p>Total: {total} </p>
-          <p>Positive feedback: {positivePercentage}%</p>
-        </section>
+      {total > 0 && (
+        <Wrapper>
+          <Text>Good: {good}</Text>
+          <Text>Neutral: {neutral}</Text>
+          <Text>Bad: {bad}</Text>
+          <Text>Total: {total} </Text>
+          <Text>Positive feedback: {positivePercentage}%</Text>
+        </Wrapper>
       )}
     </>
   );
