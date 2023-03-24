@@ -1,8 +1,10 @@
+import { Component } from 'react';
+
 import { FeedbackOptions } from 'components/FeedbackOptions/FeedbackOptions';
 import { Notification } from 'components/Notification/Notification';
 import { Section } from 'components/Section/Section';
 import { Statistics } from 'components/Statistics/Statistics';
-import { Component } from 'react';
+
 import { Layout } from './App.styled';
 import { GlobalStyle } from './GlobalStyle';
 
@@ -43,7 +45,7 @@ export class App extends Component {
         </Section>
 
         <Section title="Statistics">
-          {total === 0 ? (
+          {!total ? (
             <Notification message="There is no feedback" />
           ) : (
             <Statistics

@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+
 import { Text, Wrapper } from './Statistics.styled';
 
 export const Statistics = ({
